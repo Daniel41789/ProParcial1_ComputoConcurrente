@@ -67,7 +67,6 @@ int main(int argc, char *argv[]){
     matrizInversa<<<numBloques, tamanoBloque>>>(d_matrizAdjunta, d_inversa, d_determinante, N);
 
     cudaMemcpy(matrizInversa_h, d_inversa, N * N * sizeof(float), cudaMemcpyDeviceToHost);
-    cudaMemcpy(&det, d_determinante, sizeof(float), cudaMemcpyDeviceToHost);
 
     printf("Matriz Inversa:\n");
     for (int i = 0; i < N * N; i++) {
