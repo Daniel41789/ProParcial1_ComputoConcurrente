@@ -10,7 +10,7 @@ __device__ float determinanteSubmatriz(float *matriz, int fila, int columna, int
 
 __global__ void determinante(float *matriz, float *det, int N){
     for(int j = 0; j < N; j++)
-        det[j] += matriz[j] * determinanteSubmatriz(matriz, 0, j, N);
+        det[0] += matriz[j] * determinanteSubmatriz(matriz, 0, j, N);
 }
 
 __global__ void matrizAdjunta(float *matriz, float *adjunta, int N){
