@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
 
     cudaMalloc(&d_matriz, N*N*sizeof(float));
     cudaMalloc(&d_matrizAdjunta, N*N*sizeof(float));
-    cudaMalloc(&d_determinante, sizeof(float));
+    cudaMalloc(&d_determinante, N*sizeof(float));
     cudaMalloc(&d_inversa, N*N*sizeof(float));
 
     cudaMemcpy(d_matriz, matrizE_h, N*N*sizeof(float), cudaMemcpyHostToDevice);
