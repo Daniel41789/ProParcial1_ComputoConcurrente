@@ -74,6 +74,7 @@ int main(int argc, char *argv[]){
         if ((i + 1) % N == 0)
             printf("\n");
     }
+    cudaDeviceSynchronize();
 
     free(matrizE_h);
     free(matrizInversa_h);
