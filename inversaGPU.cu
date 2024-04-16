@@ -64,7 +64,7 @@ int main(int argc, char *argv[]){
 
     matrizAdjunta<<<numBloques, tamanoBloque>>>(d_matriz, d_matrizAdjunta, N);
     determinante<<<1,1>>>(d_matriz, d_determinante, N);
-    matrizInversa<<<numBloques, tamanoBloque>>>(d_matrizAdjunta, d_inversa, d_determinante, N);
+    matrizInversa<<<tamanoMalla, tamanoBloque>>>(d_matrizAdjunta, d_inversa, d_determinante, N);
 
     cudaMemcpy(matrizInversa_h, d_inversa, N * N * sizeof(float), cudaMemcpyDeviceToHost);
 
